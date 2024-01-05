@@ -1,16 +1,18 @@
 # Vending Machine
 
-#  There will be a number of beverage lists displayed in this area, including the prices of the beverages.
+#  There will be a set of numbers of beverage lists displayed in this area, including the prices of the beverages.
 
 import os
 
-Beverages = {f"Coca Cola": 1.35, "Red Bull": 1.40, "Dr Pepper": 2.00, "Fanta": 1.50}
+Beverages = {f"Coca Cola": 1.35, "Red Bull": 1.40, "Dr Pepper": 2.00, "Fanta": 1.50, "Sprite": 2.10, "Pepsi": 2.20}
 
 Introduction = f"˗ˏˋ ★ ˎˊ˗ Please Select An Item ˗ˏˋ ★ ˎˊ˗"
 
 import shutil
 
 columns = shutil.get_terminal_size().columns
+
+#  Implemented a design using print function in python In order to make it appear more visually engaging and captivating to the eye.
 
 print("╭── ⋅ ⋅ ── ⋅ ⋅ D ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋆ ☆ ⋆ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ──╮".center(columns))
 
@@ -20,10 +22,15 @@ print("────── ⋆⋅We are glad to have you here at the Solace Satur
 
 print("⋆⋅SOLACE SATURN'S VENDING MACHINE𓇢𓆸⋅⋆".center(columns))
 
+print("╭─────── ୨୧ ───────╮".center(columns))
 
-print("𓏲 ๋࣭ ࣪ ˖𝘉𝘌𝘝𝘌𝘙𝘈𝘎𝘌𝘚".center(columns))
+print("BEVERAGES❀".center(columns))
 
-print("╔═══════════════════════╗".center(columns))
+print("╰──────────────────╯".center(columns))
+
+print(" ".center(columns))
+
+print("⊹˚₊‧╔═══════════════════════╗‧₊˚⊹".center(columns)) 
 
 print("║ Coca Cola ║  $ 1.35   ║".center(columns))
                 
@@ -37,14 +44,22 @@ print("║ Dr Pepper ║  $ 2.00   ║".center(columns))
 
 print("║═══════════║═══════════║".center(columns))
 
+print("║  Sprite   ║  $ 2.10   ║".center(columns))
+
+print("║═══════════║═══════════║".center(columns))
+
 print("║   Fanta   ║  $ 1.50   ║".center(columns))
 
-print("╚═══════════════════════╝".center(columns))
+print("║═══════════║═══════════║".center(columns))
+
+print("║   Pepsi   ║  $ 2.20   ║".center(columns))
+
+print("⊹˚₊╚═══════════════════════╝‧₊˚⊹".center(columns))
 
 
-#  In this part. When the user types a beverage, the quantity and price of the selected beverage will be displayed.
+#  In this part. When the user enters a beverage, the quantity and price of the selected beverage will be displayed.
 
-def transaction():
+def money_transactions():
 
     item_Beverages = input("🗨  You will need to enter the name of the beverage here ➔".center(columns))
     
@@ -56,19 +71,19 @@ def transaction():
 
         total_price = item_quantity * price
 
-        print("Beverages:".center(os.get_terminal_size().columns))
+        print("Beverages ✧˖°:".center(os.get_terminal_size().columns))
 
         print(f"{item_Beverages}".center(os.get_terminal_size().columns))
 
-        print("Quantity:".center(os.get_terminal_size().columns))
+        print("Quantity ✧˖°:".center(os.get_terminal_size().columns))
 
         print(f"{item_quantity}".center(os.get_terminal_size().columns))
 
-        print("Price:".center(os.get_terminal_size().columns))
+        print("Price ✧˖°:".center(os.get_terminal_size().columns))
 
         print(f"${total_price:.2f}".center(os.get_terminal_size().columns))
 
-        user_amount = float(input("Enter the amount: "))
+        user_amount = float(input("Enter the amount of money: "))
 
         if user_amount >= total_price:
 
@@ -80,7 +95,7 @@ def transaction():
         
         #  Upon entering the correct answer, the following message will appear: "Transaction complete ☺✓! Your change is $"
 
-        #  If the user has a limited amount of money or chooses to enter 1 or 0, the message will appear as follows: "Not enough money ✗!"
+        #  If the user has a limited amount of money or chooses to enter less than 1 or 0, the message will appear as follows: "Not enough money ✗!"
 
         #  Finally, if the user inserts an item code that does not appear in the final output. this message will appear instead: "Invalid item code ☹!"
 
@@ -98,7 +113,7 @@ while True:
 
     print(Introduction.center(os.get_terminal_size().columns))
 
-    if not transaction():
+    if not money_transactions():
 
         break
 
