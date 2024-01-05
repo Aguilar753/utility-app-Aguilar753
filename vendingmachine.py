@@ -1,16 +1,36 @@
-# Vending Machine
+#  Kirk's Vending Machine
 
 #  There will be a set of numbers of beverage lists displayed in this area, including the prices of the beverages.
 
-#  Aligning the text to the middle.
+#  Lists of beverages included in the vending machine.
 
 import os
 
-Beverages = {f"COCA COLA": 1.35, "RED BULL": 1.40, "DR PEPPER": 2.00, "SPRITE": 2.10, "FANTA": 1.50, "PEPSI": 2.20, "LIPTON": 2.25, "SUNKIST": 1.75, "7UP": 2.55}
+Beverages = {
+            "COCA COLA": 1.20, 
 
-Introduction = f"˗ˏˋ ★ ˎˊ˗ Please Select An Item ˗ˏˋ ★ ˎˊ˗"
+            "RED BULL":  1.40, 
+
+            "DR PEPPER": 2.00, 
+
+            "SPRITE": 2.10, 
+
+            "FANTA": 1.50, 
+
+            "PEPSI": 2.20, 
+
+            "LIPTON": 2.25, 
+
+            "SUNKIST": 1.75, 
+      
+            "7UP": 2.55
+            }
+
+
 
 import shutil
+
+Introduction = f"˗ˏˋ ★ ˎˊ˗ Please Select An Item ˗ˏˋ ★ ˎˊ˗"
 
 columns = shutil.get_terminal_size().columns
 
@@ -20,7 +40,7 @@ print("╭── ⋅ ⋅ ── ⋅ ⋅ D ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ 
 
 print("────── ⋆⋅We are glad to have you here at the Solace Saturn's Vending machine ☽ Would you like to purchase anything in particular?⋅⋆ ──────".center(columns))
 
-print("Try our Solace Saturn's Vending Machine and drink your heart out! ˙ᵕ˙".center(columns))
+print("Try our Solace Saturn's Vending Machine and drink your heart out. Come get it! ˙ᵕ˙".center(columns))
 
 #  Title of the vending machine.
 
@@ -76,7 +96,6 @@ print("║   7UP     ║  $ 2.55   ║".center(columns))
 
 print("⊹˚₊╚═══════════════════════╝‧₊˚⊹".center(columns))
 
-
 #  In this part. When the user enters a beverage, the quantity and price of the selected beverage will be displayed.
 
 def money_transactions():
@@ -111,23 +130,23 @@ def money_transactions():
 
             print(f"Thank you so much for purchasing ๋࣭⭑!".center(columns))
 
-            print(f"Transaction complete ☺✓! Your change is ${change:.2f}".center(columns))
+            print(f"Transaction complete ☺✓! Your change is now ${change:.2f}".center(columns))
 
             return True
         
-        #  Upon entering the correct answer, the following message will appear: "Transaction complete ☺✓! Your change is $"
+        #  Upon entering the correct answer, the following message will appear: "Transaction complete ☺✓! Your change is now $"
 
-        #  If the user has a limited amount of money or chooses to enter less than 1 or 0, the message will appear as follows: "Not enough money ✗!"
+        #  If the user has a limited amount of money or chooses to enter less than 1 or 0, the message will appear as follows: ""Not enough funds ✗! Sorry about that!""
 
-        #  Finally, if the user inserts an item code that does not appear in the final output. this message will appear instead: "Invalid item code ☹!"
+        #  Finally, if the user inserts an item code that does not appear in the final output. this message will appear instead: "Invalid item code ☹! Please enter a valid item code!"
 
         else:
 
-            print("Not enough money ✗! Sorry!".center(columns))
+            print("Not enough funds ✗! Sorry about that!".center(columns))
 
     else:
 
-        print("Invalid item code ☹!".center(columns))
+        print("Invalid item code ☹! Please enter a valid item code!".center(columns))
 
     return False
 
