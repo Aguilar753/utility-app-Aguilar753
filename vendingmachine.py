@@ -2,6 +2,8 @@
 
 #  There will be a set of numbers of beverage lists displayed in this area, including the prices of the beverages.
 
+#  Aligning the text to the middle.
+
 import os
 
 Beverages = {f"Coca Cola": 1.35, "Red Bull": 1.40, "Dr Pepper": 2.00, "Fanta": 1.50, "Sprite": 2.10, "Pepsi": 2.20}
@@ -18,7 +20,7 @@ print("╭── ⋅ ⋅ ── ⋅ ⋅ D ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ 
 
 print("────── ⋆⋅We are glad to have you here at the Solace Saturn's Vending machine ☽ Would you like to purchase anything in particular? ˙ᵕ˙⋅⋆ ──────".center(columns))
 
-
+#  Title of the vending machine.
 
 print("⋆⋅SOLACE SATURN'S VENDING MACHINE𓇢𓆸⋅⋆".center(columns))
 
