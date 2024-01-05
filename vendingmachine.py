@@ -124,7 +124,7 @@ def money_transactions():
 
         user_amount = float(input("Enter the amount of money: ".center(columns)))
 
-        if user_amount >= total_price:
+        if user_amount != total_price:
 
             change = user_amount - total_price
 
