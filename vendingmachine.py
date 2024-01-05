@@ -6,7 +6,7 @@
 
 import os
 
-Beverages = {f"Coca Cola": 1.35, "Red Bull": 1.40, "Dr Pepper": 2.00, "Fanta": 1.50, "Sprite": 2.10, "Pepsi": 2.20}
+Beverages = {f"COCA COLA": 1.35, "RED BULL": 1.40, "DR PEPPER": 2.00, "SPRITE": 2.10, "FANTA": 1.50, "PEPSI": 2.20, "LIPTON": 2.25, "SUNKIST": 1.75, "7UP": 2.55}
 
 Introduction = f"˗ˏˋ ★ ˎˊ˗ Please Select An Item ˗ˏˋ ★ ˎˊ˗"
 
@@ -18,7 +18,9 @@ columns = shutil.get_terminal_size().columns
 
 print("╭── ⋅ ⋅ ── ⋅ ⋅ D ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋆ ☆ ⋆ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ── ⋅ ⋅ ──╮".center(columns))
 
-print("────── ⋆⋅We are glad to have you here at the Solace Saturn's Vending machine ☽ Would you like to purchase anything in particular? ˙ᵕ˙⋅⋆ ──────".center(columns))
+print("────── ⋆⋅We are glad to have you here at the Solace Saturn's Vending machine ☽ Would you like to purchase anything in particular?⋅⋆ ──────".center(columns))
+
+print("Try our Solace Saturn's Vending Machine and drink your heart out! ˙ᵕ˙".center(columns))
 
 #  Title of the vending machine.
 
@@ -34,27 +36,43 @@ print(" ".center(columns))
 
 print("⊹˚₊‧╔═══════════════════════╗‧₊˚⊹".center(columns)) 
 
-print("║ Coca Cola ║  $ 1.35   ║".center(columns))
+print("║ COCA COLA ║  $ 1.35   ║".center(columns))
                 
 print("║═══════════║═══════════║".center(columns))
 
-print("║ Red Bull  ║  $ 1.40   ║".center(columns))
+print("║ RED BULL  ║  $ 1.40   ║".center(columns))
 
 print("║═══════════║═══════════║".center(columns))
 
-print("║ Dr Pepper ║  $ 2.00   ║".center(columns))
+print("║ DR PEPPER ║  $ 2.00   ║".center(columns))
 
 print("║═══════════║═══════════║".center(columns))
 
-print("║  Sprite   ║  $ 2.10   ║".center(columns))
+print("║  SPRITE   ║  $ 2.10   ║".center(columns))
 
 print("║═══════════║═══════════║".center(columns))
 
-print("║   Fanta   ║  $ 1.50   ║".center(columns))
+print("║   FANTA   ║  $ 1.50   ║".center(columns))
 
 print("║═══════════║═══════════║".center(columns))
 
-print("║   Pepsi   ║  $ 2.20   ║".center(columns))
+print("║   PEPSI   ║  $ 2.20   ║".center(columns))
+
+print("║═══════════║═══════════║".center(columns))
+
+print("║  LIPTON   ║  $ 2.25   ║".center(columns))
+
+print("║═══════════║═══════════║".center(columns))
+
+print("║  SUNKIST  ║  $ 1.75   ║".center(columns))
+
+print("║═══════════║═══════════║".center(columns))
+
+print("║   CRUSH   ║  $ 2.15   ║".center(columns))
+
+print("║═══════════║═══════════║".center(columns))
+
+print("║   7UP     ║  $ 2.55   ║".center(columns))
 
 print("⊹˚₊╚═══════════════════════╝‧₊˚⊹".center(columns))
 
@@ -63,9 +81,9 @@ print("⊹˚₊╚════════════════════�
 
 def money_transactions():
 
-    item_Beverages = input("🗨  You will need to enter the name of the beverage here ➔".center(columns))
+    item_Beverages = input("🗨  You will need to enter the name of the beverage here! ➔".center(columns))
     
-    item_quantity = int(input("Enter the quantity here ➔ "))
+    item_quantity = int(input("Enter the quantity here! ➔ ".center(columns)))
     
     if item_Beverages in Beverages:
         
@@ -73,25 +91,27 @@ def money_transactions():
 
         total_price = item_quantity * price
 
-        print("Beverages ✧˖°:".center(os.get_terminal_size().columns))
+        print("Beverages ⊹ ࣪ ˖:".center(columns))
 
-        print(f"{item_Beverages}".center(os.get_terminal_size().columns))
+        print(f"{item_Beverages}".center(columns))
 
-        print("Quantity ✧˖°:".center(os.get_terminal_size().columns))
+        print("Quantity ⊹ ࣪ ˖:".center(columns))
 
-        print(f"{item_quantity}".center(os.get_terminal_size().columns))
+        print(f"{item_quantity}".center(columns))
 
-        print("Price ✧˖°:".center(os.get_terminal_size().columns))
+        print("Price ⊹ ࣪ ˖:".center(columns))
 
-        print(f"${total_price:.2f}".center(os.get_terminal_size().columns))
+        print(f"${total_price:.2f}".center(columns))
 
-        user_amount = float(input("Enter the amount of money: "))
+        user_amount = float(input("Enter the amount of money: ".center(columns)))
 
         if user_amount >= total_price:
 
             change = user_amount - total_price
 
-            print(f"Transaction complete ☺✓! Your change is ${change:.2f}".center(os.get_terminal_size().columns))
+            print(f"Thank you so much for purchasing ๋࣭⭑!".center(columns))
+
+            print(f"Transaction complete ☺✓! Your change is ${change:.2f}".center(columns))
 
             return True
         
@@ -103,20 +123,20 @@ def money_transactions():
 
         else:
 
-            print("Not enough money ✗! Sorry!".center(os.get_terminal_size().columns))
+            print("Not enough money ✗! Sorry!".center(columns))
 
     else:
 
-        print("Invalid item code ☹!".center(os.get_terminal_size().columns))
+        print("Invalid item code ☹!".center(columns))
 
     return False
 
 while True:
 
-    print(Introduction.center(os.get_terminal_size().columns))
+        print(Introduction.center(columns))
 
-    if not money_transactions():
+        if not money_transactions():
 
-        break
+            break
 
     
